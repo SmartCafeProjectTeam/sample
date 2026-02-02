@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display User Data</title>
+    <style>
+        /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page background */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    padding: 30px;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+/* Table */
+#user {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Table header */
+#user thead {
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+
+#user thead th {
+    padding: 14px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.8px;
+}
+
+/* Table body */
+#user tbody td {
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Zebra striping */
+#user tbody tr:nth-child(even) {
+    background-color: #f7f9fc;
+}
+
+/* Hover effect */
+#user tbody tr:hover {
+    background-color: #e3f2fd;
+    transform: scale(1.01);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* Borders */
+#user th,
+#user td {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Responsive table (mobile) */
+@media (max-width: 768px) {
+    #user thead {
+        display: none;
+    }
+
+    #user,
+    #user tbody,
+    #user tr,
+    #user td {
+        display: block;
+        width: 100%;
+    }
+
+    #user tr {
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        padding: 10px;
+        background: #ffffff;
+    }
+
+    #user td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    #user td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #555;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <h1>User Data</h1>
+    <table  id="user" >
+         <thead>
+            <tr>
+                <th>Id</th>
+                <th>first Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+
+            </tr>
+        </thead>
+     <tbody id="tablebody">
+
+     </tbody>
+
+    </table>
+   <script src="Display.js"></script>
+</body>
+</html>
